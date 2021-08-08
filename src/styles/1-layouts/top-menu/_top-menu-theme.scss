@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '../../constants';
+@use '../../mixins';
+@use '~@angular/material' as mat;
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $is-dark-theme: map.get($theme, is-dark);
+
+  mat-toolbar.app-toolbar {
+    @if $is-dark-theme {
+      &.mat-primary {
+        background: mat.get-color-from-palette($primary, darker)
+      }
+    }
+
+    // HOME PAGE OVERRIDE: TOPNAV TOOLBAR
+    .page-home & {
+      background: if($is-dark-theme, mat.get-color-from-palette($primary, darker), constants.$blue);
+    }
+
+    mat-icon {
+      color: constants.$white;
+    }
+
+    // SEARCH BOX
+    app-search-box.search-container {
+      input {
+        color: constants.$darkgray;
+        background-color: constants.$white;
+
+        @include mixins.placeholder {
+          color: constants.$mediumgray;
+        }
+      }
+    }
+
+    app-theme-toggle {
+      @media screen and (min-width: 351px) {
+        border-right: 1px solid constants.$white;
+      }
+    }
+  }
+}

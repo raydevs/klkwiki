@@ -1,0 +1,68 @@
+@use '../../mixins';
+
+// VARIABLES
+$showTopMenuWidth: 1150px;
+$hideTopMenuWidth: $showTopMenuWidth - 1;
+
+// DOCS PAGE / STANDARD: TOPNAV TOOLBAR FIXED
+mat-toolbar.app-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+
+    mat-toolbar-row {
+        padding: 0 16px 0 0;
+    }
+
+    // SEARCH BOX
+    app-search-box.search-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        min-width: 150px;
+        height: 100%;
+        margin-right: 16px;
+
+        input {
+            border: none;
+            border-radius: 100px;
+            padding: 5px 16px;
+            margin-left: 8px;
+            width: 180px;
+            max-width: 240px;
+            height: 50%;
+            -webkit-appearance: none;
+
+            &:focus {
+                outline: none;
+            }
+
+            @include mixins.placeholder {
+                @include mixins.font-size(14);
+            }
+
+            @media (min-width: 1000px) {
+                transition: width 0.4s ease-in-out;
+
+                &:focus {
+                    width: 80%;
+                }
+            }
+
+            @media (max-width: 515px) {
+                width: 150px;
+            }
+        }
+    }
+
+    app-theme-toggle {
+        @media screen and (min-width: 350px) {
+            padding-right: 2px;
+            margin-right: 2px;
+        }
+    }
+}

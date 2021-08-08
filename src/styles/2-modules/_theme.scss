@@ -1,0 +1,5 @@
+@use 'search-results/search-results-theme';
+
+@mixin theme($theme) {
+    @include search-results-theme.theme($theme);
+}

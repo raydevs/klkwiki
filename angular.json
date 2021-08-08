@@ -25,15 +25,29 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "webWorkerTsConfig": "tsconfig.worker.json",
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss",
+              {
+                "inject": false,
+                "input": "src/styles/custom-themes/dark-theme.scss",
+                "bundleName": "dark-theme"
+              },
+              {
+                "inject": false,
+                "input": "src/styles/custom-themes/light-theme.scss",
+                "bundleName": "light-theme"
+              }
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -91,10 +105,21 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss",
+              {
+                "inject": false,
+                "input": "src/styles/custom-themes/dark-theme.scss",
+                "bundleName": "dark-theme"
+              },
+              {
+                "inject": false,
+                "input": "src/styles/custom-themes/light-theme.scss",
+                "bundleName": "light-theme"
+              }
             ],
             "scripts": []
           }

@@ -1,0 +1,7 @@
+@use 'layout-global/layout-global-theme';
+@use 'top-menu/top-menu-theme';
+
+@mixin theme($theme) {
+    @include layout-global-theme.theme($theme);
+    @include top-menu-theme.theme($theme);
+}
