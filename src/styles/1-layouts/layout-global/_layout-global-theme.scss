@@ -1,6 +1,6 @@
-@import 'sass:map';
-@import '../../constants' ;
 @use '~@angular/material' as mat;
+@use 'sass:map';
+@use '../../constants' as constants;
 
 @mixin theme($theme) {
   $background: map.get($theme, background);
