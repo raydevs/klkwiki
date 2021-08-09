@@ -1,6 +1,7 @@
 <mat-toolbar color="primary" class="app-toolbar no-print" [class.transitioning]="isTransitioning">
   <mat-toolbar-row>
     <app-search-box class="search-container" #searchBox (onSearch)="doSearch($event)" (onFocus)="doSearch($event)"></app-search-box>
+    <app-theme-toggle></app-theme-toggle>
   </mat-toolbar-row>
 </mat-toolbar>
 <app-search-result #searchResultsView *ngIf="showSearchResults" [searchResults]="searchResults | async" (resultSelected)="hideSearchResults()"></app-search-result>
