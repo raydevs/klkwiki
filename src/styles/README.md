@@ -1,6 +1,8 @@
 # CSS styles in angular.io
 
-This document gives an overview of how angular.io CSS styles are implemented and organized in files.
+This document gives an overview of how the styles are applied. Styles are implemented and organized in files. Inspired in angular.io documentation structure.  
+
+The default theme is prebuilt theme `pink-bluegray` defined in `light` and `dark` themes, pink for primary and bluegray for accent.
 
 
 ## General
@@ -40,7 +42,7 @@ When appropriate, the styles in these files should be scoped to the targeted com
 
 ## Theming
 
-Angular.io supports choosing between themes. Currently, a `light` and a `dark` theme are supported.
+Like Angular.io, supports choosing between themes. Currently, a `light` and a `dark` theme are supported.
 See also [#41129](https://github.com/angular/angular/pull/41129) for more details/discussions around the theming implementation.
 
 
